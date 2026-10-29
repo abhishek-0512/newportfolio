@@ -19,7 +19,7 @@ export const personalInfo: PersonalInfo = {
   },
   metrics: {
     dsaSolved: 200,
-    projectsCompleted: 2,
+    projectsCompleted: 3,
     internships: 2,
     cgpa: "8.0 / 10"
   }
@@ -81,102 +81,160 @@ export const educationData: EducationItem[] = [
 
 export const projects: Project[] = [
   {
-    id: "virtual-courses",
-    title: "Virtual Courses – AI-Powered LMS",
-    subtitle: "Learning Management System with Google Gemini AI Virtual Tutor",
+    id: "collab-code",
+    title: "Collab Code",
+    subtitle: "Real-Time Collaborative Coding Workspace",
     category: "ai",
     featured: true,
-    badgeText: "AI LMS Platform",
-    shortDescription: "A Learning Management System featuring role-based access control (RBAC), Gemini AI tutor integration for real-time doubt solving, and Cloudinary media pipelines.",
-    problemSolved: "Students need real-time assistance for complex course queries outside lecture hours, while educators require role-based access control for content administration.",
-    solutionOverview: "Architected a scalable Learning Management System with secure role-based access control (RBAC) utilizing JWT authentication for students, instructors, and admins. Integrated the Google Gemini AI API to build an interactive virtual tutor enabling real-time text and voice-based assistance.",
+    badgeText: "Real-Time Developer Platform",
+    shortDescription: "A production-minded collaborative coding workspace with live editing, voice rooms, sandboxed code execution, and interview-style problem solving.",
+    problemSolved: "Remote pair programming and technical interviews need synchronized editing, communication, and safe multi-language execution in one workspace.",
+    solutionOverview: "Built a real-time collaboration platform around Monaco, Yjs CRDT synchronization, Socket.IO rooms, WebRTC voice, and an isolated execution boundary for polyglot code.",
     keyFeatures: [
-      "Architected a scalable Learning Management System with secure role-based access control (RBAC) utilizing JWT authentication for students, instructors, and admins",
-      "Integrated Google Gemini AI API to build an interactive virtual tutor enabling real-time text and voice-based assistance for complex course queries",
-      "Engineered robust RESTful backend controllers and centralized frontend state using Redux Toolkit, optimizing API calls and data flow",
-      "Implemented a scalable media upload pipeline using Cloudinary to handle high-resolution course assets"
+      "Live multi-user Monaco editing with Yjs CRDT synchronization, presence indicators, and remote cursors",
+      "Room chat, WebRTC voice rooms, voice notes, and speech-to-text collaboration tools",
+      "Sandboxed JavaScript, TypeScript, Python, Java, C++, Go, and Rust execution with resource limits",
+      "JWT authentication, Zod request validation, MongoDB persistence, Redis support, and Docker deployment"
     ],
     techStack: [
-      "React.js", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "Gemini API", "JWT", "Cloudinary"
+      "React 19", "TypeScript", "Node.js", "Express 5", "Socket.IO", "Yjs", "WebRTC", "MongoDB", "Redis", "Docker"
     ],
-    githubUrl: "https://github.com/abhishek-0512/VirtualCourses",
-    liveUrl: "https://virtual-courses-dun.vercel.app/",
+    githubUrl: "https://github.com/abhishek-0512/collab-code",
+    liveUrl: "https://collab-code-topaz.vercel.app/",
     architectureDiagram: {
-      overview: "Full-Stack MERN Architecture with Gemini AI & Cloudinary",
+      overview: "Real-Time Collaborative Architecture with CRDT Sync & Sandboxed Execution",
       nodes: [
         {
-          title: "React.js + Redux Client",
-          description: "Centralized state management with Redux Toolkit for course browsing and AI tutor interface.",
-          tech: ["React.js", "Redux Toolkit", "Tailwind CSS"]
+          title: "React + Monaco Client",
+          description: "Collaborative editor, room UI, chat, presence, and voice experiences.",
+          tech: ["React", "TypeScript", "Monaco", "Yjs"]
         },
         {
-          title: "Express.js Backend",
-          description: "RESTful backend controllers enforcing JWT Role-Based Access Control (RBAC).",
-          tech: ["Node.js", "Express.js", "JWT"]
+          title: "Express + Socket.IO",
+          description: "REST APIs and real-time room transport for synchronized collaboration.",
+          tech: ["Node.js", "Express", "Socket.IO"]
         },
         {
-          title: "Google Gemini AI API",
-          description: "Interactive virtual tutor delivering text and voice-based Q&A assistance.",
-          tech: ["Gemini API"]
+          title: "Execution Sandbox",
+          description: "Isolated polyglot code execution with memory and timeout controls.",
+          tech: ["Piston", "Docker"]
         },
         {
-          title: "MongoDB & Cloudinary",
-          description: "Database storage for course data and Cloudinary pipeline for media assets.",
-          tech: ["MongoDB", "Cloudinary"]
+          title: "MongoDB + Redis",
+          description: "Persistent room data, caching, pub/sub, and rate-limit support.",
+          tech: ["MongoDB", "Redis"]
         }
       ]
     },
     technicalChallenges: [
       {
-        challenge: "Securing role-based authorization across Students, Instructors, and Admins.",
-        solution: "Implemented JWT payload verification with role-based middleware in Express controllers."
+        challenge: "Keeping concurrent edits consistent while supporting multiple collaborators.",
+        solution: "Used Yjs CRDT updates with Monaco bindings and Socket.IO transport for conflict-free convergence."
       }
     ]
   },
   {
-    id: "shopnest",
-    title: "ShopNest – E-Commerce Platform",
-    subtitle: "Full-Stack E-Commerce Solution with Advanced Product Filtering",
-    category: "fullstack",
+    id: "nexora-ai",
+    title: "Nexora AI",
+    subtitle: "Multi-Agent AI Platform",
+    category: "ai",
     featured: true,
-    badgeText: "Full-Stack E-Commerce",
-    shortDescription: "A full-stack e-commerce platform featuring advanced product filtering, seamless checkout, secure JWT authentication, and separate Vercel/Render deployments.",
-    problemSolved: "E-commerce applications require multi-criteria product filtering, secure authentication, and separate production deployments for frontend and backend microservices.",
-    solutionOverview: "Architected a full-stack e-commerce platform with advanced product filtering, seamless checkout, and secure JWT-based authentication. Designed RESTful APIs using Express.js and MongoDB for product, inventory, and order management, deploying frontend on Vercel and backend on Render.",
+    badgeText: "Multi-Agent AI Platform",
+    shortDescription: "A modular AI platform that coordinates specialized agents for tasks such as image generation and intelligent content workflows.",
+    problemSolved: "AI products need a reliable way to route user requests to specialized agents while keeping deployments, prompts, and provider integrations maintainable.",
+    solutionOverview: "Designed a modular frontend and service-oriented backend with an API gateway, specialized agent services, Redis-backed coordination, and deployment documentation for cloud environments.",
     keyFeatures: [
-      "Architected a full-stack e-commerce platform with advanced product filtering, seamless checkout, and secure JWT-based authentication for user and admin operations",
-      "Designed scalable RESTful APIs using Express.js and MongoDB for efficient product, inventory, and lifecycle order management",
-      "Deployed the React/Redux frontend on Vercel and the Node.js backend on Render, managing separate production environments and continuous integration"
+      "Specialized image agent that enhances prompts and invokes the configured image-generation provider",
+      "Service-oriented backend organized around an API gateway and independent agent services",
+      "Redis integration for shared state and coordination between services",
+      "Deployment assets for Docker, Nginx, EC2, and production environment configuration"
     ],
     techStack: [
-      "React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Framer Motion", "Vercel", "Render"
+      "React", "JavaScript", "Node.js", "Express", "Redis", "Docker", "Nginx", "AWS EC2"
     ],
-    githubUrl: "https://github.com/abhishek-0512/shopnest",
-    liveUrl: "https://shopnest-tau-pink.vercel.app/",
+    githubUrl: "https://github.com/abhishek-0512/multiagentplatform",
     architectureDiagram: {
-      overview: "Decoupled Production Architecture (Vercel + Render)",
+      overview: "Gateway-Based Multi-Agent Service Architecture",
       nodes: [
         {
-          title: "React Frontend (Vercel)",
-          description: "Responsive client interface with product filtering, Redux cart state, and Framer Motion UI.",
-          tech: ["React.js", "Redux Toolkit", "Tailwind CSS", "Vercel"]
+          title: "React Client",
+          description: "User-facing interface for interacting with the agent platform.",
+          tech: ["React", "JavaScript"]
         },
         {
-          title: "Node.js API (Render)",
-          description: "Express backend handling authentication, product catalog CRUD, and order lifecycle management.",
-          tech: ["Node.js", "Express.js", "Render"]
+          title: "API Gateway",
+          description: "Routes requests and provides a stable boundary for agent services.",
+          tech: ["Node.js", "Express"]
         },
         {
-          title: "MongoDB Atlas",
-          description: "NoSQL database storing products, user credentials, and order records.",
-          tech: ["MongoDB"]
+          title: "Specialized Agents",
+          description: "Independent services for image generation and other AI workflows.",
+          tech: ["AI Providers", "Node.js"]
+        },
+        {
+          title: "Redis + Cloud",
+          description: "Shared coordination and production deployment infrastructure.",
+          tech: ["Redis", "Docker", "AWS EC2"]
         }
       ]
     },
     technicalChallenges: [
       {
-        challenge: "Managing state across product filtering, shopping cart, and order checkout.",
-        solution: "Utilized Redux Toolkit for centralized state management with persistent state syncing."
+        challenge: "Keeping agent integrations isolated while maintaining a consistent client contract.",
+        solution: "Separated gateway routing from agent services and documented provider configuration through environment variables."
+      }
+    ]
+  },
+  {
+    id: "payvista",
+    title: "PayVista",
+    subtitle: "WhatsApp Payment Link Gateway",
+    category: "fullstack",
+    featured: true,
+    badgeText: "FinTech Automation",
+    shortDescription: "A payment-link generator and dispatcher that combines merchant analytics, hosted checkout simulation, and WhatsApp Cloud API messaging.",
+    problemSolved: "Merchants need a simple way to create payment requests, send them through WhatsApp, and track payment activity from one dashboard.",
+    solutionOverview: "Built a Node.js and Express payment workflow with Meta WhatsApp Cloud API integration, template fallback handling, analytics endpoints, and a hosted checkout simulator.",
+    keyFeatures: [
+      "Creates dynamic payment links and dispatches customer notifications through Meta WhatsApp Cloud API",
+      "Falls back to approved WhatsApp templates when the customer messaging window is unavailable",
+      "Provides merchant analytics for request volume, payment conversion, and dispatched messages",
+      "Includes hosted UPI, card, and netbanking checkout simulation for end-to-end testing"
+    ],
+    techStack: [
+      "Node.js", "Express.js", "JavaScript", "Meta WhatsApp Cloud API", "REST APIs", "Vercel"
+    ],
+    githubUrl: "https://github.com/abhishek-0512/paylink",
+    liveUrl: "https://paylink-ebon-beta.vercel.app/",
+    architectureDiagram: {
+      overview: "Payment Dashboard with WhatsApp Cloud API Integration",
+      nodes: [
+        {
+          title: "Merchant Dashboard",
+          description: "Creates payment requests and monitors delivery and payment status.",
+          tech: ["JavaScript", "REST APIs"]
+        },
+        {
+          title: "Express API",
+          description: "Generates links, computes analytics, and manages payment lifecycle data.",
+          tech: ["Node.js", "Express"]
+        },
+        {
+          title: "Meta WhatsApp API",
+          description: "Dispatches payment notifications and template-based fallbacks.",
+          tech: ["Meta Cloud API", "OAuth"]
+        },
+        {
+          title: "Hosted Checkout",
+          description: "Customer-facing payment page for UPI, cards, and netbanking flows.",
+          tech: ["React", "Vercel"]
+        }
+      ]
+    },
+    technicalChallenges: [
+      {
+        challenge: "Handling WhatsApp customer-session restrictions without losing payment notifications.",
+        solution: "Implemented error-aware template fallback behavior for Meta Cloud API session and policy errors."
       }
     ]
   }
@@ -299,8 +357,8 @@ export const achievementsData: AchievementItem[] = [
 export const githubStats: GitHubStats = {
   username: "abhishek-0512",
   totalContributions: 250,
-  totalRepositories: 8,
-  starsEarned: 15,
+  totalRepositories: 16,
+  starsEarned: 0,
   dsaRating: {
     platform: "LeetCode & GFG",
     rating: "200+",
@@ -309,17 +367,24 @@ export const githubStats: GitHubStats = {
   },
   featuredRepos: [
     {
-      name: "VirtualCourses",
-      description: "AI-Powered Learning Management System with Gemini API & Cloudinary",
-      stars: 8,
-      forks: 3,
+      name: "collab-code",
+      description: "Real-time collaborative coding workspace with CRDT sync, voice rooms, and sandboxed execution",
+      stars: 0,
+      forks: 0,
+      language: "TypeScript"
+    },
+    {
+      name: "multiagentplatform",
+      description: "Service-oriented multi-agent AI platform with gateway routing and Redis coordination",
+      stars: 0,
+      forks: 0,
       language: "JavaScript"
     },
     {
-      name: "shopnest",
-      description: "Full-Stack E-Commerce platform built with React, Redux, Express & MongoDB",
-      stars: 6,
-      forks: 2,
+      name: "paylink",
+      description: "Payment-link generator with WhatsApp Cloud API notifications and merchant analytics",
+      stars: 0,
+      forks: 0,
       language: "JavaScript"
     }
   ]
